@@ -1,12 +1,9 @@
 import { Box, Button, Stack, TextField } from "@mui/material";
 import { useState } from "react";
-import { useNavigate } from "react-router";
 
 export default function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
-  const navigate = useNavigate();
 
   const onUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setUsername(event.target.value);
