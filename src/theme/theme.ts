@@ -5,8 +5,8 @@ export const theme = createTheme({
   colorSchemes: {
     dark: {
       palette: {
-        primary:   { main: '#7C5CFF', light: '#A18BFF', dark: '#5A3DE0', contrastText: '#FFFFFF' }, // electric violet
-        secondary: { main: '#22D3EE', light: '#67E8F9', dark: '#0891B2', contrastText: '#07080F' }, // neon cyan
+        primary:   { main: '#7C5CFF', light: '#A18BFF', dark: '#5A3DE0', contrastText: '#FFFFFF' },
+        secondary: { main: '#22D3EE', light: '#67E8F9', dark: '#0891B2', contrastText: '#07080F' },
         background: { default: '#07080F', paper: '#11131F' },
         text: { primary: '#E8EAF6', secondary: '#9AA0B8', disabled: '#5A6072' },
         divider: 'rgba(255,255,255,0.08)',

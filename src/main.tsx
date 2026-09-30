@@ -5,12 +5,16 @@ import { router } from "./routes.tsx";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme/theme.ts";
 import { CssBaseline } from "@mui/material";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </Provider>
   </StrictMode>,
 );

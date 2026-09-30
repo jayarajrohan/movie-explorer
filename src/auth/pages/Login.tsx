@@ -1,19 +1,12 @@
 import { Box, Button, Stack, TextField } from "@mui/material";
-import { useState } from "react";
+import { useNavigate } from "react-router";
 
 export default function Login() {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-  const onUsernameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setUsername(event.target.value);
+  const onLogin = () => {
+    navigate("/movies");
   };
-
-  const onPasswordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setPassword(event.target.value);
-  };
-
-  const onLogin = () => {};
 
   return (
     <Box
@@ -35,8 +28,6 @@ export default function Login() {
           required
           fullWidth
           slotProps={{ inputLabel: { shrink: true } }}
-          value={username}
-          onChange={onUsernameChange}
         />
         <TextField
           id="password"
@@ -48,8 +39,6 @@ export default function Login() {
           required
           fullWidth
           slotProps={{ inputLabel: { shrink: true } }}
-          value={password}
-          onChange={onPasswordChange}
         />
         <Button
           type="submit"
