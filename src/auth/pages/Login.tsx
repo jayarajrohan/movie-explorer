@@ -1,10 +1,12 @@
 import { Box, Button, Stack, TextField } from "@mui/material";
+import type { SubmitEvent } from "react";
 import { useNavigate } from "react-router";
 
 export default function Login() {
   const navigate = useNavigate();
 
-  const onLogin = () => {
+  const onLogin = (e: SubmitEvent<HTMLFormElement>) => {
+    e.preventDefault();
     navigate("/movies");
   };
 
@@ -18,7 +20,12 @@ export default function Login() {
         p: 2,
       }}
     >
-      <Stack component="form" spacing={2} sx={{ width: "100%", maxWidth: 400 }}>
+      <Stack
+        component="form"
+        onSubmit={onLogin}
+        spacing={2}
+        sx={{ width: "100%", maxWidth: 400 }}
+      >
         <TextField
           id="username"
           name="username"
@@ -40,12 +47,7 @@ export default function Login() {
           fullWidth
           slotProps={{ inputLabel: { shrink: true } }}
         />
-        <Button
-          type="submit"
-          variant="contained"
-          size="large"
-          onClick={onLogin}
-        >
+        <Button type="submit" variant="contained" size="large">
           Log in
         </Button>
       </Stack>
